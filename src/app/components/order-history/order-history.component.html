@@ -1,0 +1,41 @@
+<h1>Restaurant Faves</h1>
+<table>
+<tr>
+    <td>Filter by restaurant</td>
+    <td><input type ="text"/></td>
+    <td><p>Filter by orderAgain</p></td>
+    <td><input type ="checkbox" value="true"/></td>
+    <td><button>Clear Filter</button></td>
+</tr>
+</table>
+
+<table>
+    <tr>
+        <th>Description</th>
+    <th>Restaurant</th>
+    <th>Rating</th>
+    <th>Order Again?</th>
+    <th></th>
+    </tr>
+    @for (o of allOrder; track o.id) {
+        <tr>
+            <td>{{o.description}}</td>
+            <td>{{o.restaurant}}</td>
+            <td>{{o.rating}}</td>
+            @if (o.orderAgain) {
+                <td> ✓
+                </td>
+            }
+            @else {
+                <td> 
+                </td>
+            }
+           
+            <button class="button" (click)="callApiDeleteOrder(o)">❌
+               
+              </button>
+        </tr>
+    }
+</table>
+
+<app-add-order (Created)="callApiAddOrder($event)"></app-add-order>

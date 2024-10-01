@@ -1,0 +1,23 @@
+<h2>Add an order</h2>
+<table>
+    <tr>
+       <td><p>Description:</p></td> 
+        <td><input type ="text"[(ngModel)]="formOrder.description"/></td>
+    </tr>
+    <tr>
+        <td><p>Restaurant:</p></td>
+        <td><input type ="text"[(ngModel)]="formOrder.restaurant"/></td>
+    </tr>
+    <tr>
+        <td><p>Rating(1-5):</p></td>
+        <td><input type ="number"[(ngModel)]="formOrder.rating"/></td>
+    </tr>
+    <tr>
+       <td><p>Order Again:</p></td> 
+        <td><input type ="checkbox" value="true"[(ngModel)]="formOrder.orderAgain"/></td>
+    </tr>
+    <tr>
+        <button (click)="emitCreated()">Submit</button>
+    </tr>
+</table>
+
